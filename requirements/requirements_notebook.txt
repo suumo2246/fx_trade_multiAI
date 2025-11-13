@@ -1,0 +1,101 @@
+# FX自動トレードシステム - ノートPC用 軽量構成
+# Created: 2025-11-13
+# Target: CPU環境・ノートPC・開発作業用
+
+# === 基本的なデータ処理・可視化ライブラリ ===
+pandas>=2.0.0                  # データフレーム操作
+numpy>=1.24.0                  # 数値計算
+matplotlib>=3.7.0              # グラフ描画
+seaborn>=0.12.0                # 統計的可視化
+plotly>=5.15.0                 # インタラクティブチャート
+mplfinance>=0.12.9             # 金融チャート描画
+
+# === 機械学習・データサイエンス（CPU版） ===
+scikit-learn>=1.3.0            # 機械学習ライブラリ
+xgboost>=1.7.0                 # 勾配ブースティング（CPU版）
+lightgbm>=4.0.0                # 高速勾配ブースティング（CPU版）
+optuna>=3.3.0                  # ハイパーパラメータ最適化
+imbalanced-learn>=0.11.0       # 不均衡データ対応
+scikit-optimize>=0.9.0         # ベイズ最適化
+
+# === テクニカル指標・金融分析 ===
+ta-lib-binary>=0.4.25          # TA-Libライブラリ（Windowsバイナリ）
+ta>=0.10.2                     # 軽量テクニカル指標ライブラリ
+yfinance>=0.2.20               # 株価データ取得（バックアップ用）
+
+# === バックテスト・取引実行 ===
+backtesting>=0.3.3             # バックテストフレームワーク
+# vectorbt>=0.25.0              # ベクトル化バックテスト（重いためオプション）
+
+# === MT5・取引所接続（Windows専用） ===
+MetaTrader5>=5.0.45            # MT5 Python API
+
+# === 深層学習・CPU処理 ===
+torch>=2.0.0                   # PyTorch（CPU版）
+# torchvision>=0.15.0           # 画像処理（FXでは不要）
+# torchaudio>=2.0.0             # 音声処理（FXでは不要）
+
+# PyTorch CPU版インストール方法:
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+# === 軽量強化学習 ===
+stable-baselines3>=2.0.0       # 強化学習アルゴリズム
+gymnasium>=0.29.0              # 強化学習環境
+
+# === 時系列分析（軽量） ===
+statsmodels>=0.14.0            # 統計モデル
+arch>=6.2.0                    # GARCH等のボラティリティモデル
+pmdarima>=2.0.0                # ARIMAモデル自動選択
+# tsfresh>=0.20.0               # 時系列特徴量（重いためオプション）
+
+# === Web・API ===
+requests>=2.31.0               # HTTP通信
+fastapi>=0.103.0               # API開発
+uvicorn>=0.23.0                # ASGI サーバー
+
+# === データベース ===
+sqlalchemy>=2.0.0              # ORM
+# redis>=4.6.0                 # インメモリデータベース（オプション）
+
+# === ユーティリティ ===
+python-dotenv>=1.0.0           # 環境変数管理
+joblib>=1.3.0                  # 並列処理・モデル保存
+tqdm>=4.66.0                   # プログレスバー
+loguru>=0.7.0                  # ログ管理
+schedule>=1.2.0                # タスクスケジューリング
+# python-telegram-bot>=20.5    # Telegram通知（オプション）
+
+# === 開発・テスト環境 ===
+jupyter>=1.0.0                 # Jupyterノートブック
+jupyterlab>=4.0.0              # JupyterLab
+ipykernel>=6.25.0              # Jupyter kernel
+pytest>=7.4.0                  # テストフレームワーク
+black>=23.7.0                  # コードフォーマッター
+flake8>=6.0.0                  # リンター
+
+# === 設定・互換性 ===
+pyyaml>=6.0                     # YAML設定ファイル
+python-dateutil>=2.8.2         # 日付処理
+pytz>=2023.3                   # タイムゾーン処理
+
+# === ノートPC専用の注意事項 ===
+#
+# 🖥️ ノートPC環境の特徴:
+# - CPU処理に最適化
+# - メモリ使用量を抑制
+# - バッテリー消費を考慮
+# - 軽量ライブラリを優先
+#
+# 💻 インストール手順:
+# 1. pip install --upgrade pip
+# 2. pip install torch --index-url https://download.pytorch.org/whl/cpu
+# 3. pip install -r requirements_notebook.txt
+#
+# 🚀 ノートPCで可能な作業:
+# - コード開発・デバッグ
+# - 小規模データでの検証
+# - ドキュメント作成
+# - システム設計
+# - 軽量バックテスト
+# - MT5データ取得
+# - 基本的なモデル学習（小データ）

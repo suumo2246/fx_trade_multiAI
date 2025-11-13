@@ -35,3 +35,22 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 # 4. 開発開始
+現在の状態を確認
+githb　プッシュ手順
+
+# 現在のGitの状態を確認
+git status
+
+# ブランチ確認
+git branch
+
+# リモートリポジトリ確認
+git remote -v
+
+ステップ3: 新しいファイルをステージング
+git add .
+ステップ5: コミット作成
+git commit -m""
+
+# GitHubにプッシュ
+git push origin master
