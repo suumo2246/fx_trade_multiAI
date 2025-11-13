@@ -1,0 +1,145 @@
+# FX自動トレードシステム開発 - 必要ライブラリ (GPU対応版)
+# Created: 2025-11-13
+# GPU Requirements: NVIDIA GPU with CUDA 11.8+ or 12.x
+
+# === 基本的なデータ処理・可視化ライブラリ ===
+pandas>=2.0.0                  # データフレーム操作
+numpy>=1.24.0                  # 数値計算
+matplotlib>=3.7.0              # グラフ描画
+seaborn>=0.12.0                # 統計的可視化
+plotly>=5.15.0                 # インタラクティブチャート
+mplfinance>=0.12.9             # 金融チャート描画
+
+# === GPU加速データ処理（RAPIDS） ===
+# cudf>=23.10.0                 # GPU版pandas（要CUDA環境）
+# cupy>=12.0.0                  # GPU版numpy（要CUDA環境）
+# cuml>=23.10.0                 # GPU版scikit-learn（要CUDA環境）
+# cugraph>=23.10.0              # GPU版NetworkX（要CUDA環境）
+
+# === 機械学習・データサイエンス（GPU対応） ===
+scikit-learn>=1.3.0            # 機械学習ライブラリ
+xgboost>=1.7.0                 # 勾配ブースティング（GPU対応）
+lightgbm>=4.0.0                # 高速勾配ブースティング（GPU対応）
+catboost>=1.2                  # CatBoost（GPU対応）
+optuna>=3.3.0                  # ハイパーパラメータ最適化
+optuna-integration>=3.3.0      # Optuna統合ライブラリ
+imbalanced-learn>=0.11.0       # 不均衡データ対応
+umap-learn>=0.5.3              # 次元削減
+scikit-optimize>=0.9.0         # ベイズ最適化
+
+# === テクニカル指標・金融分析 ===
+ta-lib-binary>=0.4.25          # TA-Libライブラリ（Windowsバイナリ）- メイン指標ライブラリ
+ta>=0.10.2                     # 軽量テクニカル指標ライブラリ（代替）
+yfinance>=0.2.20               # 株価データ取得（バックアップ用）
+# pandas-ta>=0.3.14            # テクニカル指標計算（Python 3.12+が必要なため無効化）
+# quantlib>=1.31               # 金融工学ライブラリ（オプション・重い）
+
+# === バックテスト・取引実行 ===
+backtesting>=0.3.3             # バックテストフレームワーク
+zipline-reloaded>=3.0.0        # 本格的なバックテストエンジン
+vectorbt>=0.25.0               # ベクトル化バックテスト
+
+# === MT5・取引所接続（Windows専用） ===
+MetaTrader5>=5.0.45            # MT5 Python API
+
+# === 深層学習・GPU処理（PyTorch CUDA対応） ===
+torch>=2.0.0                   # PyTorch（ニューラルネットワーク）
+torchvision>=0.15.0            # PyTorch画像処理
+torchaudio>=2.0.0              # PyTorch音声処理
+# PyTorchのCUDA版インストール方法:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# または CUDA 12.x の場合:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+tensorboard>=2.13.0            # 学習過程の可視化
+torchmetrics>=1.0.0            # PyTorch用メトリクス
+lightning>=2.0.0               # PyTorch Lightning（高レベルAPI）
+
+# === 強化学習（GPU対応） ===
+stable-baselines3>=2.0.0       # 強化学習アルゴリズム
+sb3-contrib>=2.0.0             # 追加強化学習アルゴリズム
+gymnasium>=0.29.0              # 強化学習環境（OpenAI Gym後継）
+ray[default]>=2.7.0            # 分散処理・強化学習
+ray[tune]>=2.7.0               # ハイパーパラメータチューニング
+ray[rllib]>=2.7.0              # 分散強化学習
+
+# === 時系列分析（GPU対応） ===
+statsmodels>=0.14.0            # 統計モデル
+arch>=6.2.0                    # GARCH等のボラティリティモデル
+tsfresh>=0.20.0                # 時系列特徴量自動抽出
+pmdarima>=2.0.0                # ARIMAモデル自動選択
+sktime>=0.24.0                 # 時系列機械学習
+darts>=0.25.0                  # 時系列予測（深層学習対応）
+prophet>=1.1.4                 # Facebook Prophet
+neuralprophet>=0.6.0           # Neural Prophet（PyTorch版）
+
+# === GPU監視・管理 ===
+pynvml>=11.5.0                 # NVIDIA GPU監視
+gpustat>=1.1.1                 # GPU使用状況表示
+nvidia-ml-py3>=7.352.0         # NVIDIA Management Library
+
+# === Web・API ===
+requests>=2.31.0               # HTTP通信
+websocket-client>=1.6.0        # WebSocket通信
+fastapi>=0.103.0               # API開発
+uvicorn>=0.23.0                # ASGI サーバー
+
+# === データベース ===
+sqlalchemy>=2.0.0              # ORM
+sqlite3                        # 軽量データベース（標準ライブラリ）
+redis>=4.6.0                   # インメモリデータベース
+
+# === ユーティリティ ===
+python-dotenv>=1.0.0           # 環境変数管理
+joblib>=1.3.0                  # 並列処理・モデル保存
+tqdm>=4.66.0                   # プログレスバー
+loguru>=0.7.0                  # ログ管理
+schedule>=1.2.0                # タスクスケジューリング
+python-telegram-bot>=20.5      # Telegram通知
+
+# === 開発・テスト環境 ===
+jupyter>=1.0.0                 # Jupyterノートブック
+jupyterlab>=4.0.0              # JupyterLab
+ipykernel>=6.25.0              # Jupyter kernel
+pytest>=7.4.0                  # テストフレームワーク
+pytest-cov>=4.1.0              # カバレッジ測定
+black>=23.7.0                  # コードフォーマッター
+flake8>=6.0.0                  # リンター
+mypy>=1.5.0                    # 型チェック
+
+# === 設定・互換性 ===
+pyyaml>=6.0                     # YAML設定ファイル
+python-dateutil>=2.8.2         # 日付処理
+pytz>=2023.3                   # タイムゾーン処理
+packaging>=23.1                # パッケージ管理
+
+# === 注意事項・インストール順序 ===
+# 
+# 🖥️ GPU環境のセットアップ順序:
+# 1. NVIDIA GPU ドライバーの最新版をインストール
+# 2. CUDA Toolkit 11.8+ または 12.x をインストール
+# 3. cuDNN をインストール（深層学習用）
+# 
+# 📦 ライブラリのインストール順序:
+# 1. pip install --upgrade pip setuptools wheel
+# 2. pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# 3. pip install -r requirements.txt --find-links https://download.pytorch.org/whl/cu118
+# 
+# 🔧 GPU対応ライブラリの有効化:
+# - XGBoost: tree_method='gpu_hist', gpu_id=0
+# - LightGBM: device='gpu', objective='gpu_hist'
+# - CatBoost: task_type='GPU'
+# 
+# 🚨 重要な注意事項:
+# 1. ta-lib-binary は Windowsユーザー向けです（Mac/Linux は ta-lib を使用）
+# 2. pandas-ta は Python 3.12+ が必要なため、Python 3.11以下では無効化済み
+# 3. MetaTrader5 は Windows でのみ利用可能です
+# 4. RAPIDS (cudf, cuml) は Linux/WSL2 推奨、Windows要検証
+# 5. CUDA バージョンは PyTorch と対応していることを確認
+# 6. メモリ不足時は --no-cache-dir オプションを使用
+# 7. テクニカル指標は ta-lib-binary + 手動実装の組み合わせを推奨
+# 
+# 📊 GPU メモリ使用量目安:
+# - 基本機械学習: 4GB以上
+# - 深層学習: 8GB以上推奨
+# - 大規模データ処理: 16GB以上推奨

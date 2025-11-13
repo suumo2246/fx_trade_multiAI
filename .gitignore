@@ -1,0 +1,176 @@
+# ==========================================================================
+# FX自動トレードシステム - .gitignore
+# Created: 2025-11-13
+# ==========================================================================
+
+# ========== Python Virtual Environment ==========
+venv/
+env/
+ENV/
+.venv/
+.env/
+Scripts/
+pyvenv.cfg
+
+# ========== Python Cache & Compiled Files ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.dll
+*.dylib
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ========== IDE & Editor Files ==========
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ========== Logs & Temporary Files ==========
+logs/
+*.log
+temp/
+cache/
+*.tmp
+*.bak
+*.swp
+
+# ========== Large Data Files ==========
+# Raw data (potentially very large)
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.xls
+data/raw/*.json
+data/raw/*.parquet
+data/processed/*.csv
+data/processed/*.h5
+data/processed/*.hdf5
+
+# Historical market data
+data/historical/
+*.h5
+*.hdf5
+*.feather
+
+# ========== Model Files (Can be Large) ==========
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pth
+models/*.zip
+models/*.tar.gz
+models/checkpoints/
+models/layer1/*.pkl
+models/layer2/*.pkl
+models/layer2/rl_agents/*.zip
+
+# ========== Configuration & Secrets ==========
+.env
+.env.local
+.env.production
+config/secrets.yaml
+config/api_keys.json
+config/mt5_credentials.json
+
+# ========== OS Specific Files ==========
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+
+# Linux
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========== Jupyter Notebook ==========
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# ========== Testing ==========
+.coverage
+.pytest_cache/
+.tox/
+htmlcov/
+.coverage.*
+
+# ========== Database Files ==========
+*.db
+*.sqlite
+*.sqlite3
+
+# ========== Backup Files ==========
+*.backup
+*.bak
+*~.nib
+
+# ========== Large Binary Files ==========
+*.bin
+*.exe (except required ones)
+*.msi
+*.deb
+*.rpm
+
+# ========== Documentation Build ==========
+docs/_build/
+site/
+
+# ========== Project Specific ==========
+# MT5 data cache
+mt5_cache/
+
+# Backtest results (can be large)
+outputs/backtest_results/*.html
+outputs/backtest_results/*.png
+outputs/performance_reports/
+
+# Model training logs
+tensorboard_logs/
+mlruns/
+
+# Temporary analysis files
+analysis_temp/
+scratch/
+
+# Large pickle files
+*.pkl.gz
+*.joblib.gz
