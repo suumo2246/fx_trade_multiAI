@@ -27,7 +27,7 @@ pip install -r requirements_notebook.txt
 ### 2. 主要ライブラリ（ノートPC）
 - **pandas, numpy, matplotlib** - 基本データ処理
 - **scikit-learn, xgboost(CPU)** - 軽量機械学習
-- **ta-lib-binary, ta** - テクニカル指標
+- **ta, finta** - テクニカル指標（ta-lib-binaryは利用不可）
 - **backtesting** - 軽量バックテスト
 - **jupyter, pytest** - 開発環境
 
@@ -89,7 +89,7 @@ pip install -r requirements_desktop.txt
 
 ### ノートPC作業のベストプラクティス
 - **小データセット使用**: 1000-5000件程度で迅速テスト
-- **軽量ライブラリ優先**: ta-lib > pandas-ta
+- **軽量ライブラリ優先**: ta、finta を使用
 - **バッテリー対策**: CPU使用率監視
 - **高速反復**: コード変更→即座テスト
 

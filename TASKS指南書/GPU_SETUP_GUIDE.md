@@ -86,7 +86,7 @@ pip install cupy-cuda11x  # CUDA 11.x用
 ```bash
 # テクニカル分析
 pip install pandas numpy matplotlib seaborn
-pip install pandas-ta ta-lib-binary mplfinance
+pip install ta finta mplfinance>=0.12.7a0
 pip install backtesting
 
 # 時系列分析（GPU対応）

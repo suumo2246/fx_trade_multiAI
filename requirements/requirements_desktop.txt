@@ -9,7 +9,7 @@ numpy>=1.24.0                  # 数値計算
 matplotlib>=3.7.0              # グラフ描画
 seaborn>=0.12.0                # 統計的可視化
 plotly>=5.15.0                 # インタラクティブチャート
-mplfinance>=0.12.9             # 金融チャート描画
+mplfinance>=0.12.7a0           # 金融チャート描画（安定版）
 
 # === GPU加速データ処理（RAPIDS）※Linux/WSL2推奨 ===
 # cudf>=23.10.0                 # GPU版pandas（要CUDA環境）
@@ -28,8 +28,11 @@ umap-learn>=0.5.3              # 次元削減
 scikit-optimize>=0.9.0         # ベイズ最適化
 
 # === テクニカル指標・金融分析 ===
-ta-lib-binary>=0.4.25          # TA-Libライブラリ（Windowsバイナリ）
-ta>=0.10.2                     # 軽量テクニカル指標ライブラリ
+# ta-lib-binary>=0.4.25        # TA-Libライブラリ（Windowsバイナリ - 利用不可）
+# pandas-ta>=0.3.14            # pandas拡張テクニカル指標（利用不可）
+# TA-Lib代替: 以下の軽量ライブラリを使用
+ta>=0.10.2                     # 軽量テクニカル指標ライブラリ（RSI, MACD, Bollinger等）
+finta>=1.3                     # 金融テクニカル指標
 yfinance>=0.2.20               # 株価データ取得（バックアップ用）
 
 # === バックテスト・取引実行（高性能版） ===

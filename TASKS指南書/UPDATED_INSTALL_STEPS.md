@@ -25,14 +25,11 @@ pip install optuna joblib
 
 ### ステップ3: テクニカル指標ライブラリ
 ```bash
-# TA-Lib（Windowsバイナリ版）
-pip install ta-lib-binary
+# テクニカル指標（ta-lib-binaryは利用不可）
+pip install ta finta
 
-# 軽量代替
-pip install ta
-
-# 金融チャート
-pip install mplfinance
+# 金融チャート（バージョン指定）
+pip install "mplfinance>=0.12.7a0"
 ```
 
 ### ステップ4: バックテスト
@@ -62,8 +59,9 @@ import numpy as np
 print("✅ 基本ライブラリOK")
 
 # ステップ3確認
-import talib
-print("✅ TA-LibOK")
+import ta
+from finta import TA
+print("✅ テクニカル指標ライブラリOK")
 
 # ステップ4確認
 from backtesting import Backtest, Strategy
@@ -80,8 +78,9 @@ print("✅ バックテストOK")
 ## 📝 変更履歴
 
 **2025年11月13日の調整:**
-- pandas-ta → ta-lib-binary に主力変更
-- Python 3.11対応の安定構成に修正
+- ta-lib-binary、pandas-ta → ta + finta に変更（利用不可のため）
+- mplfinance → 0.12.7a0以上にバージョン指定
+- Python 3.10対応の安定構成に修正
 - 段階的インストールでエラー率を最小化
 - GPU対応は基本環境構築後に追加
 

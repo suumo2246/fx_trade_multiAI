@@ -19,7 +19,7 @@ pip install -r requirements.txt
 #### ステップ1: 基本ライブラリ　（完了）
 ```bash
 # データ処理・可視化
-pip install pandas numpy matplotlib seaborn plotly mplfinance
+pip install pandas numpy matplotlib seaborn plotly "mplfinance>=0.12.7a0"
 ```
 
 #### ステップ2: 機械学習ライブラリ　（完了）
@@ -31,12 +31,11 @@ pip install imbalanced-learn umap-learn scikit-optimize
 
 #### ステップ3: 金融・テクニカル分析　（完了）
 ```bash
-# テクニカル指標（TA-Libメイン）
-pip install ta-lib-binary  # Windowsの場合
-pip install ta             # 軽量代替ライブラリ
+# テクニカル指標（ta-lib-binaryは利用不可のため代替使用）
+pip install ta             # 軽量テクニカル指標ライブラリ
+pip install finta          # 金融テクニカル指標ライブラリ
 
-# pandas-taは現在Python 3.12+が必要なためスキップ
-# pip install pandas-ta    # Python 3.11以下では使用不可
+# 注意: ta-lib-binary、pandas-taは現在のPython環境では利用不可
 
 # バックテスト
 pip install backtesting vectorbt
@@ -64,9 +63,9 @@ pip install pytest black flake8 mypy
 ### 3. OS別の注意事項
 
 #### Windows ユーザー
-- ✅ `ta-lib-binary` を使用（バイナリ版でインストール簡単）
+- ✅ `ta` および `finta` を使用（ta-lib-binaryは利用不可）
 - ✅ `MetaTrader5` が利用可能
-- ✅ すべてのライブラリが利用可能
+- ✅ ほとんどのライブラリが利用可能
 
 #### Mac/Linux ユーザー
 ```bash
@@ -161,15 +160,13 @@ if __name__ == "__main__":
 
 #### よくあるエラーと解決法
 
-**1. TA-Lib インストールエラー（Windows）**
+**1. テクニカル指標ライブラリのインストール（Windows）**
 ```bash
-# エラーが出た場合
-pip install ta-lib-binary
+# 推奨: ta と finta を使用
+pip install ta finta
 
-# または軽量代替
-pip install ta
-
-# pandas-taはPython 3.12+が必要なため現在は使用不可
+# 注意: ta-lib-binary、pandas-taは現在のPython環境では利用不可
+# ta-lib-binaryはバイナリが見つからず、pandas-taはPython 3.12+が必要
 ```
 
 **2. PyTorch CUDA対応（GPU使用時）**

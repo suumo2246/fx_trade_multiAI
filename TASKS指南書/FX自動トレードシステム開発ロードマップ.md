@@ -40,12 +40,12 @@ venv\Scripts\activate
 
 # 必要なライブラリのインストール
 pip install pandas numpy matplotlib
-pip install pandas-ta ta-lib-bin  # Windowsの場合
+pip install ta finta  # Windowsの場合（ta-lib-binaryは利用不可）
 pip install scikit-learn lightgbm xgboost
 pip install optuna
 pip install backtesting
 pip install MetaTrader5  # MT5を使用する場合
-pip install mplfinance  # チャート描画用
+pip install "mplfinance>=0.12.7a0"  # チャート描画用
 ```
 
 ### 0.2 プロジェクト構造の作成
