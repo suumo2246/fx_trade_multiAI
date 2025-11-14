@@ -54,3 +54,6 @@ git commit -m""
 
 # GitHubにプッシュ
 git push origin master
+
+githubの更新を反映させる
+git pull origin master
